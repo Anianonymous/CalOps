@@ -47,7 +47,5 @@ ngrok will provide a public URL (e.g., https://random-subdomain.ngrok.io). Share
 **Containers**:
 It's crucial to ensure that the Docker images you're using are up-to-date. You can use the following script to update your image:
 
-```bash
-docker pull anirudh06/calci_img:latest
-kubectl set image deployment/calci-app-deployment calci-app=anirudh06/calci_img:latest
-
+## The link for my application:
+## https://7f2c-2402-e280-2146-6f7-3342-928d-97ca-e485.ngrok-free.app/
