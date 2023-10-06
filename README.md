@@ -40,12 +40,3 @@ To monitor the health and performance of the application, you can use Kubernetes
    ngrok http portnumber
 ngrok will provide a public URL (e.g., https://random-subdomain.ngrok.io). Share this URL to provide external access to the application.
 
-## Maintenance
-
-### 1. **Regular Updates**
-
-**Containers**:
-It's crucial to ensure that the Docker images you're using are up-to-date. You can use the following script to update your image:
-
-## The link for my application:
-## https://7f2c-2402-e280-2146-6f7-3342-928d-97ca-e485.ngrok-free.app/
