@@ -11,6 +11,15 @@ This guide provides major instructions that how I deploy the `CalOps` on a Kuber
 3. Docker (if running Minikube locally)
 4. `ngrok`
 
+### Monitoring the Application
+
+To monitor the health and performance of the application, you can use Kubernetes built-in tools:
+
+1. To check the status of the pods:
+   ```bash
+   kubectl get pods
+
+
 ## Deployment
 
 ### Deploying the Application
@@ -21,15 +30,16 @@ This guide provides major instructions that how I deploy the `CalOps` on a Kuber
    ```bash
    kubectl apply -f deployment.yaml
    ## Monitoring and Logs
-
-### Monitoring the Application
-
-To monitor the health and performance of the application, you can use Kubernetes built-in tools:
-
-1. To check the status of the pods:
+3. Exposing the Application Locally
+   Forward the service port to your local machine:
    ```bash
-   kubectl get pods
-   
+   kubectl port-forward service/calci-app-deployment portnumber:portnumber
+4. Exposing the Application to the Internet
+   In a new terminal, start ngrok:
+   ```bash
+   ngrok http portnumber
+ngrok will provide a public URL (e.g., https://random-subdomain.ngrok.io). Share this URL to provide external access to the application.
+
 ## Maintenance
 
 ### 1. **Regular Updates**
