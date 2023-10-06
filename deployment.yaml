@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calci-app-deployment
+  labels:
+    app: calci-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: calci-app
+  template:
+    metadata:
+      labels:
+        app: calci-app
+    spec:
+      containers:
+      - name: calci-app
+        image: anirudh06/calci_img
+        ports:
+        - containerPort: 8501
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: calci-app-deployment
+spec:
+  selector:
+    app: calci-app
+  ports:
+    - protocol: TCP
+      port: 8501
+      targetPort: 8501
+  type: LoadBalancer
+
