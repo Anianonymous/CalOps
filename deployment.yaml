@@ -19,6 +19,10 @@ spec:
         image: anirudh06/calci_img
         ports:
         - containerPort: 8501
+        resources:
+          limits:
+            memory: "128Mi"    #we make sure this is set
+            cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
